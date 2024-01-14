@@ -18,7 +18,7 @@ if (turns === true) {
     document.getElementById('turnTeller').innerHTML = 'P turn'
 }
 else if (turns === false) {
-    document.getElementById('turnTeller').innerHTML = 'CPU turn'
+    document.getElementById('turnTeller').innerHTML = 'C turn'
 }
 
 
@@ -55,7 +55,7 @@ window.onclick = e => {
         document.getElementById('turnTeller').innerHTML = 'P turn'
     }
     else if (turns === false) {
-        document.getElementById('turnTeller').innerHTML = 'CPU turn'
+        document.getElementById('turnTeller').innerHTML = 'C turn'
     }
 }
 
@@ -67,7 +67,7 @@ function RanCPU() {
         document.getElementById('turnTeller').innerHTML = 'P turn'
     }
     else if (turns === false) {
-        document.getElementById('turnTeller').innerHTML = 'CPU turn'
+        document.getElementById('turnTeller').innerHTML = 'C turn'
     }
 
     if (gameWon === false) {
