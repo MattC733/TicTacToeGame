@@ -40,7 +40,7 @@ window.onclick = e => {
         squaresChanged++
         setTimeout(() => { detectWin(); }, 2000)
     }
-    else if (turns === false && square === EmptySquare) {
+    else if (turns === false && square === 0) {
         button.src = 'Images/Oselection.png'
         button.alt = -1
         turns = true
