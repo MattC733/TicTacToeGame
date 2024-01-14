@@ -31,10 +31,9 @@ window.onclick = e => {
     console.log(document.getElementById(e.target.id).alt)
 
     let button = document.getElementById(e.target.id)
-    let square = document.getElementById(e.target.id).alt
+    let square = parseInt(document.getElementById(e.target.id).alt)
 
     if (turns === true && square === 0) {
-        button.src = 'Images/Xselection.png'
         button.alt = 1
         turns = false
         button = 1

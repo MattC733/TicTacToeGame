@@ -12,6 +12,8 @@ var gameTied = false
 var gameBoard = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 var fakeBoard = []
 var Obutton = 'Images/Oselection.png'
+var currentUrl = window.location.href;
+console.log(currentUrl)
 if (turns === true) {
     document.getElementById('turnTeller').innerHTML = 'P turn'
 }
@@ -36,8 +38,7 @@ window.onclick = e => {
     console.log(document.getElementById(e.target.id).alt)
 
     let button = document.getElementById(e.target.id)
-    let square = document.getElementById(e.target.id).alt
-
+    let square = parseInt(document.getElementById(e.target.id).alt)
 
     if (turns === true && square === 0) {
         button.src = 'Images/Xselection.png'
