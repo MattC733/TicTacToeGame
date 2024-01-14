@@ -32,7 +32,7 @@ window.onclick = e => {
 
     let button = document.getElementById(e.target.id)
     let square = document.getElementById(e.target.id).src
-    let EmptySquare = 'http://127.0.0.1:5500/TicTacToeWebGame/Images/EmptySquare.png'
+    let EmptySquare = 'Images/EmptySquare.png'
 
     if (turns === true && square === EmptySquare) {
         button.src = 'Images/Xselection.png'
