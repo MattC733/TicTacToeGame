@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Vs CPU</title>
+    <link rel="stylesheet" href="CPU.css">
+</head>
+
+<body>
+
+    <head>
+        <div>
+            <a class="BackBtn" href="./Index.html">
+                < BACK</a>
+        </div>
+        <div class="allPoints">
+            <div class="xPointsColumn">
+                <label>Player</label>
+                <label>WINS</label>
+                <label id="xPointsCounter">00</label>
+            </div>
+            <div class="tiePointsColumn">
+                <label id="turnTeller">~</label>
+                <label>TIES</label>
+                <label id="tiePointsCounter">00</label>
+            </div>
+            <div class="oPointsColumn">
+                <label>CPU</label>
+                <label>WINS</label>
+                <label id="oPointsCounter">00</label>
+            </div>
+        </div>
+    </head>
+    <main>
+        <div class="gameBoard">
+            <div class="boardRowOne">
+                <div>
+                    <img id="1" src="Images/EmptySquare.png" alt="0">
+                </div>
+                <div>
+                    <img id="2" src="Images/EmptySquare.png" alt="0">
+                </div>
+                <div>
+                    <img id="3" src="Images/EmptySquare.png" alt="0">
+                </div>
+            </div>
+            <div class="boardRowTwo">
+                <div>
+                    <img id="4" src="Images/EmptySquare.png" alt="0">
+                </div>
+                <div>
+                    <img id="5" src="Images/EmptySquare.png" alt="0">
+                </div>
+                <div>
+                    <img id="6" src="Images/EmptySquare.png" alt="0">
+                </div>
+            </div>
+            <div class="boardRowThree">
+                <div>
+                    <img id="7" src="Images/EmptySquare.png" alt="0">
+                </div>
+                <div>
+                    <img id="8" src="Images/EmptySquare.png" alt="0">
+                </div>
+                <div>
+                    <img id="9" src="Images/EmptySquare.png" alt="0">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="CPU.js"></script>
+</body>
+
+</html>

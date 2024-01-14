@@ -1,0 +1,75 @@
+* {
+    background: #D3FAD6;
+}
+
+.BackBtn {
+    font-family: monospace;
+    color: #390040;
+    background: #EC9192;
+    border: unset;
+    width: 3em;
+    padding: 3px;
+    border-radius: 24px;
+    margin: 3%;
+    font-size: large;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.BackBtn:hover {
+    background: #F5853F;
+}
+
+.allPoints {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    color: #390040;
+    justify-content: space-between;
+    font-size: xx-large;
+    font-family: monospace;
+}
+
+.xPointsColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tiePointsColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oPointsColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em 0em;
+}
+
+.boardRowOne {
+    display: flex;
+    gap: 1em;
+}
+
+.boardRowTwo {
+    display: flex;
+    gap: 1em;
+}
+
+.boardRowThree {
+    display: flex;
+    gap: 1em;
+}
