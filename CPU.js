@@ -12,7 +12,6 @@ var gameTied = false
 var gameBoard = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 var fakeBoard = []
 var Obutton = 'Images/Oselection.png'
-
 if (turns === true) {
     document.getElementById('turnTeller').innerHTML = 'P turn'
 }
@@ -88,74 +87,71 @@ function AIstart() {
         i++
     }
 
-    let pointsList = []
-    let movesList = []
-    let maxPoints = 0
-    let movesCounter = 100
     let cellChosen
+    let movesCounter = 100
+    let gameFinished = false
     i = 0
-    while (i < possibleMoves.length) {
+    while ((i < possibleMoves.length)) {
         movesCounter = movesCounter - 1
         cellChosen = possibleMoves[i]
         cellChosen = parseInt(cellChosen.charAt(4))
 
-        fakeBoard[cellChosen] = 'o'
-
+        fakeBoard[cellChosen] = 'x'
         checkWin();
 
-        if (gameWon === true) {
+        fakeBoard[cellChosen] = 'o'
+        checkWin();
+        if (gameLose === true) {
+            console.log('Found LOSE')
+            console.log(cellChosen)
+            let button = document.getElementById(cellChosen + 1)
+            button.src = Obutton
+            button.alt = -1
+            turns = true
+            gameBoard[cellChosen] = 'o'
+            console.log(gameBoard)
+            gameLose = false
+            gameFinished = true
+            setTimeout(() => { detectWin(); }, 1000)
+            return;
+        }
+        else if (gameWon === true) {
+            console.log('Found WIN')
+            console.log(cellChosen)
+            let button = document.getElementById(cellChosen + 1)
+            button.src = Obutton
+            button.alt = -1
+            turns = true
+            gameBoard[cellChosen] = 'o'
+            console.log(gameBoard)
             movesCounter = movesCounter + 100
             gameWon = false
+            gameFinished = true
+            setTimeout(() => { detectWin(); }, 1000)
+            return;
         }
 
         console.log(fakeBoard)
         fakeBoard[cellChosen] = ' '
-        pointsList.push(movesCounter)
-        movesList.push('cell' + (cellChosen) + '= ' + movesCounter)
-
-        console.log(movesCounter)
-        if (movesCounter >= maxPoints) {
-            maxPoints = movesCounter
-            movesCounter = 100
-        }
-
-        movesCounter = 100
 
         i++
     }
-    console.log(pointsList)
-    console.log(maxPoints)
-    console.log(movesList)
-
-    i = 0
-    while (i < movesList.length) {
-        if ((pointsList[i] === maxPoints) == false) {
-            movesList[i] = ' '
-        }
-        i++
+    console.log(possibleMoves)
+    if (gameFinished === false) {
+        randomIndex = Math.floor(Math.random() * possibleMoves.length)
+        console.log(randomIndex)
+        cellChosen = possibleMoves[randomIndex]
+        cellChosen = parseInt(cellChosen.charAt(4))
+        console.log(cellChosen)
+        let button = document.getElementById(cellChosen + 1)
+        button.src = Obutton
+        button.alt = -1
+        turns = true
+        gameBoard[cellChosen] = 'o'
+        console.log(gameBoard)
+        setTimeout(() => { detectWin(); }, 1000)
+        return;
     }
-    console.log(movesList)
-    let propMove = false
-    while (propMove === false) {
-        randomIndex = Math.floor(Math.random() * movesList.length)
-        if ((movesList[randomIndex]) === ' ') {
-            propMove = false
-        }
-        else {
-            propMove = true
-        }
-    }
-
-    console.log(randomIndex)
-    cellChosen = movesList[randomIndex]
-    cellChosen = parseInt(cellChosen.charAt(4))
-    console.log(cellChosen)
-    let button = document.getElementById(cellChosen + 1)
-    button.src = Obutton
-    button.alt = -1
-    turns = true
-    gameBoard[(cellChosen)] = 'o'
-    console.log(gameBoard)
     setTimeout(() => { detectWin(); }, 1000)
 }
 
